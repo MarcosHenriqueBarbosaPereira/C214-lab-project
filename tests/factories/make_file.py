@@ -10,7 +10,7 @@ fake = Faker()
 def make_file(
     name: str = None,
     filesize: str = None,
-    link: str = None,
+    filepath: str = None,
     owner: User = None,
     *,
     _id: str = None,
@@ -21,8 +21,8 @@ def make_file(
     if owner is None:
         owner = make_user()
 
-    if link is None:
-        link = fake.url()
+    if filepath is None:
+        filepath = __file__
 
     if filesize is None:
         filesize = fake.random_int()
@@ -35,7 +35,7 @@ def make_file(
             "id": _id,
             "name": name,
             "filesize": filesize,
-            "link": link,
+            "filepath": filepath,
             "owner": owner,
         }
     )

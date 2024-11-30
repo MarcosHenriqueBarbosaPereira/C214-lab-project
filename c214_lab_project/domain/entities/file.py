@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Required, TypedDict
 
 from c214_lab_project.domain.entities.base.entity import BaseEntity
@@ -8,7 +9,7 @@ class FileProps(TypedDict):
     id: Required[str]
     name: Required[str]
     filesize: Required[float]
-    link: Required[str]
+    filepath: Required[Path]
     owner: Required[User]
 
 
@@ -29,8 +30,8 @@ class File(BaseEntity[FileProps]):
         return self._props["share_link"]
 
     @property
-    def link(self):
-        return self._props["link"]
+    def filepath(self):
+        return self._props["filepath"]
 
     @property
     def owner(self):
