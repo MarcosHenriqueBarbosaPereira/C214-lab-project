@@ -7,13 +7,47 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+peewee = "^3.17.8"
+result = "^0.17.0"
 
+[tool.black]
+line-length = 80
+target-version = ["py312"]
+exclude = '''
+/(
+  \.git
+ | \.hg
+ | \.mypy_cache
+ | \.tox
+ | venv
+ | _build
+ | buck-out
+ | build
+ | \.flake8
+ )/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 80
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
-pytest-flask = "^1.3.0"
 pytest-cov = "^6.0.0"
 pytest-html = "^4.1.1"
+black = "^24.10.0"
+isort = "^5.13.2"
+faker = "^33.1.0"
+taskipy = "^1.14.1"
+
+[tool.taskipy.tasks]
+lint = "black --check --diff . && isort --check --diff ."
+lint-fix = "echo \"Formmating with black\" && black . && echo \"Formmating with isort\" && isort ."
+test = "pytest -s -x -vv"
+pre_test = "task lint"
+post_test = "coverage html && python tasks/open_browser.py"
+faker = "^33.1.0"
+taskipy = "^1.14.1"
 
 [build-system]
 requires = ["poetry-core"]

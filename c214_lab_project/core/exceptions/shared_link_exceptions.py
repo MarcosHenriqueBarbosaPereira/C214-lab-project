@@ -1,0 +1,2 @@
+class NotAllowedToShareFileWithoutOwnershipException(Exception):
+    pass
