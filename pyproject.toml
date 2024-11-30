@@ -2,13 +2,17 @@
 name = "c214-lab-project"
 version = "0.1.0"
 description = ""
-authors = ["MarcosHenriqueBarbosaPereira <marcos.h@gec.inatel.br>"]
+authors = [
+  "Marcos Henrique Barbosa Pereira <marcoshbp71@gmail.com>",
+  "Pedro Augusto Barbosa Aparecido <pedr.augustobarbosa.aparecido@gmail.com>"
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 peewee = "^3.17.8"
 result = "^0.17.0"
+sv-ttk = "^2.6.0"
 
 [tool.black]
 line-length = 80
@@ -48,8 +52,7 @@ lint-fix = "echo \"Formmating with black\" && black . && echo \"Formmating with 
 test = "pytest -s -x -vv"
 pre_test = "task lint"
 post_test = "coverage html && python tasks/open_browser.py"
-faker = "^33.1.0"
-taskipy = "^1.14.1"
+run = "python c214_lab_project/application/ui/main.py"
 
 [build-system]
 requires = ["poetry-core"]

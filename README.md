@@ -8,6 +8,8 @@ Repository dedicated for our project for the laboratory of C214 subject
 - [ ] Usuário pode fazer o compartilhamento de um arquivo.
 - [ ] Usuário pode definir se o compartilhamento é público ou é limitado somente para quem tem o link.
     - [ ] Usuário pode definir as permissões de acesso (editor e/ou visualizador)
+- [ ] Usuário deve ser capaz de fazer login
+- [ ] Usuário deve ser capaz de criar uma conta
 
 # Requisitos Não-Funcionais
 
