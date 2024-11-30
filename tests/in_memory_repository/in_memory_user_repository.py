@@ -10,3 +10,9 @@ class InMemoryUserRepository(UserRepository):
 
     def create(self, user: User):
         self._items.append(user)
+
+    def find_by_username(self, username: str) -> bool:
+        for user in self._items:
+            if user.username == username:
+                return True
+        return False
