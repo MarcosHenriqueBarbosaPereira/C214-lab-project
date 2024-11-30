@@ -42,7 +42,7 @@ class TestDownloadFileUseCase(CommonTestCase):
         self.assertTrue(result.is_ok())
         self.assertTrue(result.ok_value)
 
-    def test_should_be_able_to_download_a_file(self):
+    def test_should_not_be_able_to_download_an_un_exists_file(self):
         file_owner = self.current_test_user
         file = make_file(owner=file_owner, _id="file-id")
 
@@ -74,7 +74,7 @@ class TestDownloadFileUseCase(CommonTestCase):
 
         self._repository._items.append(file)
         self._shared_link_repository._items.append(shared_link)
-        
+
         result = self._sut.execute("file-id", self.current_test_user)
         self.assertTrue(result.is_ok())
         self.assertTrue(
