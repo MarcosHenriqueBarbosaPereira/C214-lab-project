@@ -1,0 +1,42 @@
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+      branches:
+          - main
+  #   tags:
+  #     - 'v*.*.*'
+  
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  lint:
+    name: "Master project linting"
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+
+      - name: Install Poetry and Project Dependencies
+        run: sh .github/scripts/poetry-script.sh
+
+      - name: Install pre-commit and run hooks
+        run: sh .github/scripts/pre-commit-script.sh
