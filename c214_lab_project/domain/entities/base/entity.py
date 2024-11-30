@@ -11,3 +11,7 @@ class BaseEntity[T]:
     @property
     def id(self) -> str:
         return self._props["id"]
+
+    @id.setter
+    def id(self, new_id: str) -> None:
+        self._props["id"] = new_id
