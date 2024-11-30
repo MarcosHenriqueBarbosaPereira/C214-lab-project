@@ -8,3 +8,7 @@ class R2Repository(ABC):
     @abstractmethod
     def upload(self, filepath: Path) -> FileObjectId:
         pass
+
+    @abstractmethod
+    def download(self, file_object_id: str) -> bool:
+        pass
