@@ -9,10 +9,12 @@ authors = [
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 peewee = "^3.17.8"
 result = "^0.17.0"
 sv-ttk = "^2.6.0"
+pywebview = "5.3.2"
+
 
 [tool.black]
 line-length = 80
