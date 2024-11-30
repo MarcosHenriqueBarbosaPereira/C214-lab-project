@@ -14,7 +14,6 @@ fake = Faker()
 
 
 def make_shared_link(
-    link: str = None,
     permissions: ShareLinkPermission = None,
     shared_by: User = None,
     file: File = None,
@@ -23,9 +22,6 @@ def make_shared_link(
 ) -> SharedLink:
     if _id is None:
         _id = fake.uuid4(convert_uuid_into_str)
-
-    if link is None:
-        link = fake.url()
 
     if permissions is None:
         permissions = ShareLinkPermission.READ_ONLY
@@ -39,7 +35,6 @@ def make_shared_link(
     return SharedLink(
         {
             "id": _id,
-            "link": link,
             "permissions": permissions,
             "shared_by": shared_by,
             "file": file,
