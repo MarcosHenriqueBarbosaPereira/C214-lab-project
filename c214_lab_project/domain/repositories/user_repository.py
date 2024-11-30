@@ -5,4 +5,5 @@ from c214_lab_project.domain.entities.user import User
 
 class UserRepository(ABC):
     @abstractmethod
-    def create(self, user: User): ...
+    def create(self, user: User) -> None:
+        pass
