@@ -12,3 +12,10 @@ class InMemorySharedLinkRepository(SharedLinkRepository):
 
     def create(self, shared_link: SharedLink):
         self._items.append(shared_link)
+
+    def find_by_file(self, shared_file_id: str) -> list[SharedLink]:
+        shared_links = []
+        for shared_link in self._items:
+            if shared_link.file.id == shared_file_id:
+                shared_links.append(shared_link)
+        return shared_links
