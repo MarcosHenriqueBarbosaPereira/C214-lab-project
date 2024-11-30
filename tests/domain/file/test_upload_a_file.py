@@ -15,14 +15,14 @@ from tests.in_memory_repository.in_memory_r2_repository import (
 )
 
 
-class TestUploadAFile(CommonTestCase):
+class TestUploadAFileUseCase(CommonTestCase):
     def setUp(self):
         self._repository = InMemoryFileRepository()
         self._bucket = InMemoryR2Repository()
 
         self._sut = UploadFileUseCase(self._repository, self._bucket)
 
-        return super(TestUploadAFile, self).setUp()
+        return super(TestUploadAFileUseCase, self).setUp()
 
     def test_should_be_able_to_upload_a_file(self):
         file_owner = self.current_test_user

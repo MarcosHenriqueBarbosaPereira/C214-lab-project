@@ -8,5 +8,8 @@ from c214_lab_project.domain.repositories.r2_repository import (
 
 
 class InMemoryR2Repository(R2Repository):
-    def upload(self, filepath: Path) -> FileObjectId:
+    def upload(self, _: Path) -> FileObjectId:
         return str(uuid4())
+
+    def download(self, _: FileObjectId) -> bool:
+        return True
