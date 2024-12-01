@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Required, TypedDict
 
 from result import Err, Ok
@@ -15,7 +16,7 @@ from c214_lab_project.domain.use_cases import UseCase
 class FileRequest(TypedDict):
     name: Required[str]
     filesize: Required[float]
-    link: Required[str]
+    filepath: Required[Path]
     owner: Required[User]
 
 
@@ -39,9 +40,7 @@ class UploadFileUseCase(UseCase):
         if file.size >= MAX_FILESIZE:
             return Err(FileIsTooLargeException())
 
-        file_object_id = self._bucket.upload(file.filepath)
-        file.id = file_object_id
-
+        self._bucket.upload(file.filepath, file.id)
         self._repository.create(file)
 
         return Ok(file.id)

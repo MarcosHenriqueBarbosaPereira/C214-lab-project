@@ -1,12 +1,12 @@
 from peewee import CharField, FloatField, ForeignKeyField
 
 from c214_lab_project.application.database.models.base_model import BaseModel
-from c214_lab_project.application.database.models.user import User
+from c214_lab_project.application.database.models.user_db import UserDB
 
 
-class File(BaseModel):
+class FileDB(BaseModel):
     name = CharField(max_length=250)
     filesize = FloatField()
     filepath = CharField(max_length=1000)
 
-    owner = ForeignKeyField(User, backref="files")
+    owner = ForeignKeyField(UserDB, backref="files")

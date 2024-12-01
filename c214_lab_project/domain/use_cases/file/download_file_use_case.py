@@ -33,11 +33,11 @@ class DownloadFileUseCase(UseCase):
         if file_on_db is None:
             return Err(FileDoesNotExistsException())
 
-        if file_on_db.owner.id != current_user.id:
+        if str(file_on_db.owner.id) != str(current_user.id):
             shared_links = self._shared_link_repository.find_by_file(file_id)
             is_permitted_to_download_file = len(shared_links) > 0
             if not is_permitted_to_download_file:
                 return Err(BlockedFileByPermissionException())
 
-        download_result = self._bucket.download(file_on_db.id)
+        download_result = self._bucket.download(str(file_on_db.id))
         return Ok(download_result)

@@ -7,3 +7,7 @@ class UserRepository(ABC):
     @abstractmethod
     def create(self, user: User) -> None:
         pass
+
+    @abstractmethod
+    def find_by_username(self, username: str) -> User:
+        pass

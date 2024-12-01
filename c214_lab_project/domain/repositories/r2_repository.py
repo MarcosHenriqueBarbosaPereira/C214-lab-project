@@ -6,7 +6,7 @@ type FileObjectId = str
 
 class R2Repository(ABC):
     @abstractmethod
-    def upload(self, filepath: Path) -> FileObjectId:
+    def upload(self, filepath: Path, file_id: str) -> FileObjectId:
         pass
 
     @abstractmethod

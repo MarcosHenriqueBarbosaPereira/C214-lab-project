@@ -12,3 +12,11 @@ class UsernameIsEmptyException(Exception):
 
 class NameIsEmptyException(Exception):
     pass
+
+
+class WrongUsernameCredential(Exception):
+    pass
+
+
+class WrongPasswordCredential(Exception):
+    pass

@@ -8,7 +8,7 @@ class UserMapper:
     def to_dict(user: User) -> Dict:
 
         return {
-            "id": user.id,
+            "id": str(user.id),
             "name": user.name,
             "username": user.username,
             "password": user.password,
