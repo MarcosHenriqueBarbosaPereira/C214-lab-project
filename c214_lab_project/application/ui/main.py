@@ -39,8 +39,8 @@ try:
         del user_info["id"]
 
         current_user = make_user(**user_info)
-except:
-    pass
+except Exception as e:
+    print(e)
 
 
 @app.command("upload")
