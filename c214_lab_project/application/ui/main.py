@@ -56,13 +56,19 @@ def main(filepath: Path):
     repository = PeeweeFileRepository()
 
     upload_use_case = UploadFileUseCase(repository, r2)
-    upload_use_case.execute(
+    result = upload_use_case.execute(
         {
             "filesize": os.path.getsize(filepath),
             "name": filepath.name,
             "filepath": filepath,
             "owner": current_user,
         }
+    )
+
+    print(
+        f"Arquivo enviado com sucesso, {result.ok_value}"
+        if result.is_ok()
+        else "Erro ao enviar arquivo"
     )
 
 
