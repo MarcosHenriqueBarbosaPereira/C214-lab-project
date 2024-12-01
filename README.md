@@ -1,19 +1,69 @@
-# C214-lab-project
-Repository dedicated for our project for the laboratory of C214 subject
+# C214 Lab Project
 
-# Requisitos Funcionais
+Este repositório é dedicado ao projeto desenvolvido para o laboratório da disciplina C214 - Engenharia de Software. O objetivo principal é fornecer uma aplicação que permite aos usuários gerenciar arquivos de forma eficiente, incluindo funcionalidades de upload, download e compartilhamento.
 
-- [ ] Usuário pode fazer upload de arquivo.
-- [ ] Usuário pode fazer o Download de um arquivo.
-- [ ] Usuário pode fazer o compartilhamento de um arquivo.
-- [ ] Usuário pode definir se o compartilhamento é público ou é limitado somente para quem tem o link.
-    - [ ] Usuário pode definir as permissões de acesso (editor e/ou visualizador)
-- [ ] Usuário deve ser capaz de fazer login
-- [ ] Usuário deve ser capaz de criar uma conta
+## Funcionalidades
 
-# Requisitos Não-Funcionais
+- **Upload de Arquivos**: Os usuários podem fazer upload de arquivos para a plataforma.
+- **Download de Arquivos**: Permite que os usuários baixem arquivos previamente enviados.
+- **Compartilhamento de Arquivos**: Os usuários podem compartilhar arquivos, definindo se o compartilhamento é público ou restrito a quem possui o link.
+  - **Permissões de Acesso**: É possível definir permissões de editor e/ou visualizador para os arquivos compartilhados.
+- **Autenticação de Usuário**: Funcionalidades de login e criação de conta para acesso seguro à aplicação.
 
-- [ ] Limite de paginação, 10, 15 ou 20 itens por página.
-- [ ] Aplicação sendo feito em Python com flask.
-- [ ] Completamente orientado a classes.
-- [ ] Utilização de GraphQL
+## Requisitos Não Funcionais
+
+- **Paginação**: A aplicação suporta paginação com limites de 10, 15 ou 20 itens por página.
+- **Tecnologia**: Desenvolvida em Python utilizando o framework Flask, com uma arquitetura totalmente orientada a classes.
+- **Documentação**: Utilização de GraphQL para a API, facilitando a consulta e manipulação de dados.
+
+## Estrutura do Projeto
+
+O projeto está organizado da seguinte forma:
+
+- `c214_lab_project/`: Contém o código-fonte principal da aplicação.
+- `tests/`: Inclui os testes automatizados para garantir a qualidade do código.
+- `.github/`: Arquivos de configuração para integração contínua e outros fluxos de trabalho do GitHub.
+- `docker-compose.yml`: Arquivo de configuração para orquestração de containers Docker.
+- `pyproject.toml` e `poetry.lock`: Arquivos de configuração do Poetry para gerenciamento de dependências.
+
+## 1. Configuração e Execução
+
+Para configurar e executar a aplicação localmente:
+
+**Clone o repositório**:
+```bash
+git clone https://github.com/MarcosHenriqueBarbosaPereira/C214-lab-project.git
+cd C214-lab-project
+```
+
+## 2. Instalação do Poetry
+
+O Poetry é uma ferramenta para gerenciamento de dependências e empacotamento em Python. Para instalá-lo, execute o seguinte comando no terminal:
+
+```bash
+pip install poetry
+```
+
+Este comando baixa e executa o instalador do Poetry. Para mais detalhes, consulte a [documentação oficial do Poetry](https://python-poetry.org/docs/).
+
+## 3. Criação e Ativação do Ambiente Virtual
+
+O Poetry cria automaticamente um ambiente virtual para o projeto ao instalar as dependências. Para ativar o ambiente virtual, utilize:
+
+```bash
+poetry shell
+```
+
+Para desativar o ambiente virtual, basta digitar `exit`.
+
+## 4. Instalação de Dependências
+
+Para instalar todas as dependências listadas no arquivo `pyproject.toml`, utilize:
+
+```bash
+poetry install
+```
+
+Após essa configuração, ao instalar as dependências, o ambiente virtual será criado no diretório do projeto.
+
+Seguindo esses passos, você terá um ambiente virtual configurado e gerenciado pelo Poetry, facilitando o desenvolvimento e a gestão de dependências em seus projetos Python. 
