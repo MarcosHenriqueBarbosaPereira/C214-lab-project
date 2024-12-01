@@ -2,6 +2,11 @@
 
 Este repositório é dedicado ao projeto desenvolvido para o laboratório da disciplina C214 - Engenharia de Software. O objetivo principal é fornecer uma aplicação que permite aos usuários gerenciar arquivos de forma eficiente, incluindo funcionalidades de upload, download e compartilhamento.
 
+Equipe:
+
+- Marcos Henrique Barbosa Pereira - Matrícula 1847 - <marcoshbp71@gmail.com>
+- Pedro Augusto Barbosa Aparecido - Matrícula 170 - <pedr.augustobarbosa.aparecido@gmail.com>
+
 ## Funcionalidades
 
 - **Upload de Arquivos**: Os usuários podem fazer upload de arquivos para a plataforma.
@@ -64,6 +69,5 @@ Para instalar todas as dependências listadas no arquivo `pyproject.toml`, utili
 poetry install
 ```
 
-Após essa configuração, ao instalar as dependências, o ambiente virtual será criado no diretório do projeto.
 
 Seguindo esses passos, você terá um ambiente virtual configurado e gerenciado pelo Poetry, facilitando o desenvolvimento e a gestão de dependências em seus projetos Python. 
