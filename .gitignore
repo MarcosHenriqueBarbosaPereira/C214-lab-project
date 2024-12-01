@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-auth.json 
+auth.json
 
 # C extensions
 *.so
